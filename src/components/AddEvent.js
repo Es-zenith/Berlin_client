@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
-function AddTask(props) {
+function AddEvent(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -29,7 +29,7 @@ function AddTask(props) {
 
   return (
     <div className="AddTask">
-      <h3>Add New Task</h3>
+      <h3>Add New Event</h3>
       
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -38,10 +38,10 @@ function AddTask(props) {
         <label>Description:</label>
         <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
 
-        <button type="submit">Add Task</button>
+        <button type="submit">Add Event</button>
       </form>
     </div>
   );
 }
 
-export default AddTask;
+export default AddEvent;

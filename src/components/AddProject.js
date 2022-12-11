@@ -6,6 +6,7 @@ const API_URL = "http://localhost:5005";
 function AddProject(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [people, setPeopleLimit] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ function AddProject(props) {
     .then((response) => {
       setTitle("");
       setDescription("");
+      setPeopleLimit("");
       props.refreshProjects();
     })
     .catch((error) => console.log(error));
@@ -27,7 +29,7 @@ function AddProject(props) {
 
   return (
     <div className="AddProject">
-      <h3>Add Project</h3>
+      <h3>Add Event</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
@@ -35,6 +37,9 @@ function AddProject(props) {
 
         <label>Description:</label>
         <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+
+        <label>People Limited to:</label>
+        <textarea type="text" name="description" value={people} onChange={(e) => setPeopleLimit(e.target.value)}/>
 
         <button type="submit">Submit</button>
       </form>

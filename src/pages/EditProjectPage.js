@@ -59,7 +59,7 @@ function EditProjectPage(props) {
   
   return (
     <div className="EditProjectPage">
-      <h3>Edit the Project</h3>
+      <h3>Edit the Event</h3>
 
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>
@@ -68,10 +68,10 @@ function EditProjectPage(props) {
         <label>Description:</label>
         <textarea name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
 
-        <button type="submit">Update Project</button>
+        <button type="submit">Update Event</button>
       </form>
 
-      <button onClick={deleteProject}>Delete Project</button>
+      <button onClick={deleteProject}>Delete Event</button>
     </div>
   );
 }

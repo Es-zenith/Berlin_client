@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import AddTask from "../components/AddTask";
+import AddEvent from "../components/AddEvent";
 
 import TaskCard from "../components/TaskCard";
 
@@ -40,13 +40,13 @@ function ProjectDetailsPage (props) {
       )}
 
       
-      <AddTask refreshProject={getProject} projectId={projectId} />          
+      {/* <AddEvent refreshProject={getProject} projectId={projectId} />           */} 
 
-      { project && project.tasks.map((task) => <TaskCard key={task._id} {...task} /> )} 
+      {/* { project && project.tasks.map((task) => <TaskCard key={task._id} {...task} /> )}  */}
 
-      <Link to="/projects"><button>Back to projects</button></Link>
+      <Link to="/projects"><button>Back to Event</button></Link>
 
-      <Link to={`/projects/edit/${projectId}`}><button>Edit Project</button></Link>
+      <Link to={`/projects/edit/${projectId}`}><button>Edit Event</button></Link>
       
     </div>
   );

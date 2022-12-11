@@ -10,6 +10,9 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import LandingPage from "./pages/LandingPage";
+
+
 
 function App() {
   return (
@@ -18,7 +21,8 @@ function App() {
 
       <Routes>      
         <Route path="/" element={<HomePage />} />
-
+        <Route path="/landingPage" element={<LandingPage />} />
+      
         <Route
           path="/projects"
           element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 

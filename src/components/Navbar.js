@@ -9,11 +9,11 @@ function Navbar() {
 
   return (
     <nav>
-      <Link to="/"><button>Home</button></Link>
+      <Link to="/landingPage"><button>Home</button></Link>
 
       {isLoggedIn && (
         <>
-          <Link to="/projects"><button>Projects</button></Link>
+          <Link to="/projects"><button>My Events</button></Link>
         
           <button onClick={logOutUser}>Logout</button>
           <span>{user && user.name}</span>

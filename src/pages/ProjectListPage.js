@@ -3,6 +3,7 @@ import axios from "axios";
 import AddProject from "./../components/AddProject";
 import ProjectCard from "./../components/ProjectCard";
 
+
 const API_URL = "http://localhost:5005";
 
 function ProjectListPage() {
@@ -31,7 +32,7 @@ function ProjectListPage() {
       <AddProject refreshProjects={getAllProjects} />
       
       { projects.map((project) => <ProjectCard key={project._id} {...project} />  )} 
-
+      
     </div>
   );
 }
