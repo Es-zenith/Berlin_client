@@ -8,26 +8,33 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
-    <nav>
-      <Link to="/landingPage"><button>Home</button></Link>
+    <div className="container">
+    <h2>Berlin Social </h2>
+    <nav className="nav">
+      
+      <Link to="/homePage">Home</Link>
 
       {isLoggedIn && (
         <>
-          <Link to="/projects"><button>My Events</button></Link>
-        
+          <Link to="/projects">My Events</Link>
+          <Link to= "/profile">Me</Link>
+          {/* <button>{user && user.name}</button> */}
           <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
+       
         </>
       )}
-
       {!isLoggedIn && (
         <>
-          <Link to="/signup"> <button>Sign Up</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
+          <Link to="/signup">Sign Up </Link>
+          <Link to="/login"> Login </Link>
         </>
-      )}      
-    </nav>
+      )}  
+      </nav>    
+    </div>
+    
+    
   );
 }
 
 export default Navbar;
+

@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AddProject from "./../components/AddProject";
+import AddEvent from "./../components/AddEvent";
 import ProjectCard from "./../components/ProjectCard";
+
 
 
 const API_URL = "http://localhost:5005";

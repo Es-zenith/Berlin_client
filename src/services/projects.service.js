@@ -24,6 +24,11 @@ class ProjectsService {
     return this.api.post('/api/projects', requestBody);
   }
 
+  createOne = (requestBody) => {
+    return this.api.post('/api/projects', requestBody);
+    
+  }
+
   // GET /api/projects
   getAll = () => {
     return this.api.get('/api/projects');
@@ -43,8 +48,6 @@ class ProjectsService {
   deleteProject = (id) => {
     return this.api.delete(`/api/projects/${id}`);
   } 
-
-
 }
 
 // Create one instance (object) of the service

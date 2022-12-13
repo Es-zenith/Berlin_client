@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import AddEvent from "../components/AddEvent";
 
 import TaskCard from "../components/TaskCard";
 
@@ -36,10 +35,9 @@ function ProjectDetailsPage (props) {
         <>
           <h1>{project.title}</h1>
           <p>{project.description}</p>
+          <p>{project.peopleLimit}</p>
         </>
       )}
-
-      
       {/* <AddEvent refreshProject={getProject} projectId={projectId} />           */} 
 
       {/* { project && project.tasks.map((task) => <TaskCard key={task._id} {...task} /> )}  */}

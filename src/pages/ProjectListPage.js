@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AddProject from "./../components/AddProject";
+import AddEvent from "../components/AddEvent";
 import ProjectCard from "./../components/ProjectCard";
+import { useContext } from "react";
+import { AuthContext } from "./../context/auth.context";
+
+
 
 
 const API_URL = "http://localhost:5005";
 
 function ProjectListPage() {
   const [projects, setProjects] = useState([]);
+  const { user } = useContext(AuthContext);
 
   const getAllProjects = () => {
     // Get the token from the localStorage
@@ -29,9 +34,11 @@ function ProjectListPage() {
   return (
     <div className="ProjectListPage">
       
-      <AddProject refreshProjects={getAllProjects} />
+      <AddEvent refreshProjects={getAllProjects} />
       
-      { projects.map((project) => <ProjectCard key={project._id} {...project} />  )} 
+      { projects
+      .filter((project)=> {return project.owner == user._id})
+      .map((project) => <ProjectCard key={project._id} {...project} />  )} 
       
     </div>
   );

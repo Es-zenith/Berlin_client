@@ -5,12 +5,12 @@ import HomePage from "./pages/HomePage";
 import ProjectListPage from "./pages/ProjectListPage";
 import ProjectDetailsPage from "./pages/ProjectDetailsPage";
 import EditProjectPage from "./pages/EditProjectPage";
-
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import LandingPage from "./pages/LandingPage";
+import ProfilePage from "./pages/ProfilePage";
 
 
 
@@ -20,14 +20,19 @@ function App() {
       <Navbar />
 
       <Routes>      
-        <Route path="/" element={<HomePage />} />
-        <Route path="/landingPage" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/homePage" element={<HomePage />} />
+
+        <Route
+          path="/profile"
+          element={ <IsPrivate> <ProfilePage /> </IsPrivate> } 
+        />
       
         <Route
           path="/projects"
           element={ <IsPrivate> <ProjectListPage /> </IsPrivate> } 
         />
-
+  
         <Route
           path="/projects/:projectId"
           element={ <IsPrivate> <ProjectDetailsPage /> </IsPrivate> }
