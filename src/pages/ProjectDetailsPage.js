@@ -35,7 +35,9 @@ function ProjectDetailsPage (props) {
         <>
           <h1>{project.title}</h1>
           <p>{project.description}</p>
-          <p>{project.peopleLimit}</p>
+          <p>{project.date}</p>
+          <p>{project.time}</p>
+          <img src={project.imageUrl} alt="event_picture" width="350"/>
         </>
       )}
       {/* <AddEvent refreshProject={getProject} projectId={projectId} />           */} 

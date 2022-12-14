@@ -13,6 +13,10 @@ function AddEvent(props) {
   const [description, setDescription] = useState("");
   const [peopleLimit, setPeopleLimit] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [place, setPlace] = useState("");
+  const [type, setType] = useState("");
   // ******** this method handles the file upload ********
   const handleFileUpload = (e) => {
     // console.log("The file to be uploaded is: ", e.target.files[0]);
@@ -36,7 +40,7 @@ function AddEvent(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description, peopleLimit, owner: user._id, imageUrl};
+    const requestBody = { title, description, peopleLimit, owner: user._id, imageUrl, date, time, type, place};
 
     // Get token from localStorage
     const storedToken = localStorage.getItem('authToken');
@@ -51,6 +55,10 @@ function AddEvent(props) {
       setDescription("");
       setPeopleLimit("");
       setImageUrl("");
+      setDate("");
+      setTime("");
+      setType("");
+      setPlace("");
       props.refreshProjects();
     })
     .catch((error) => console.log(error));
@@ -65,10 +73,27 @@ function AddEvent(props) {
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
 
         <label>Description:</label>
-        <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+        <textarea type="text" name="description"  value={description} onChange={(e) => setDescription(e.target.value)}/>
+
+        <span>
+        <label>When:</label>
+        <input type="date" name="date" value={date} onChange={(e) => setDate(e.target.value)}/>
+        <label>Time:</label>
+        <input type="time" name="time" value={time} onChange={(e) => setTime(e.target.value)}/>
+        </span>
 
         <label>Event Limited to:</label>
-        <textarea type="number" name="eventLimitation" value={peopleLimit} onChange={(e) => setPeopleLimit(e.target.value)}/>
+        <input type="number" name="eventLimitation" min="1" value={peopleLimit} onChange={(e) => setPeopleLimit(e.target.value)}/>
+        <label>Location:</label>
+        <textarea type="text" name="location" value={place} onChange={(e) => setPlace(e.target.value)}/>
+
+        {/* <label>Event type:</label>
+        <select name="type" 
+          <option value="social">Social</option>
+          <option value="sports">Saab</option>
+          <option value="clubbing">Opel</option>
+          <option value="nature">Audi</option> value={type} onChange={(e) => setDate(e.target.value)} </select> */}
+
         <label>Image:</label>
         <input type="file" onChange={(e) => handleFileUpload(e)} />
         <button type="submit">Submit</button>
