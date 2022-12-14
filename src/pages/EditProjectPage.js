@@ -41,6 +41,7 @@ function EditProjectPage(props) {
         setDate(oneProject.date);
         setPlace(oneProject.place);
         setType(oneProject.type);
+        setPeopleLimit(oneProject.peopleLimit);
         setImageUrl(oneProject.imageUrl);
       })
       .catch((error) => console.log(error));
@@ -125,7 +126,7 @@ function EditProjectPage(props) {
 
         <label>Image:</label>
         <input type="file" onChange={(e) => handleFileUpload(e)} />
-        <button type="submit">Update Project</button>
+        <button type="submit">Update Event</button>
       </form>
 
       <button onClick={deleteProject}>Delete Event</button>

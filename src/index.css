@@ -84,7 +84,7 @@ textarea {
 
 .EditProjectPage,
 .AddProject,
-.AddTask,
+.AddComment,
 .SignupPage,
 .LoginPage {
   background: #f7f7f5;
@@ -100,7 +100,7 @@ textarea {
 }
 
 .EditProjectPage {
-  background-color: rgb(188, 22, 119);
+  background-color: #d5b895;
 }
 
 .SignupPage {
@@ -127,7 +127,7 @@ textarea {
 }
 
 .EditProjectPage form,
-.AddTask form,
+.AddComment form,
 .AddProject form,
 .SignupPage form,
 .LoginPage form {
@@ -150,5 +150,12 @@ textarea {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.ProjectDetails {
+  background-color: #d5b895;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 

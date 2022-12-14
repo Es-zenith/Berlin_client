@@ -9,6 +9,7 @@ function SignupPage(props) {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
+  const [sex, setSex] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
@@ -17,13 +18,15 @@ function SignupPage(props) {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
   const handleAge = (e) => setAge(e.target.value);
+  const handleSex = (e) => setSex(e.target.value);
+
 
 
   
   const handleSignupSubmit = (e) => {
     e.preventDefault();
     // Create an object representing the request body
-    const requestBody = { email, password, name, age };
+    const requestBody = { email, password, name, age, sex };
 
     // Make an axios request to the API
     // If POST request is successful redirect to login page
@@ -46,8 +49,19 @@ function SignupPage(props) {
         <label>Name:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
-        <label>Age:</label>
-        <input type="number" name="age" value={age} onChange={handleAge} />
+        <label>Birthdate</label>
+        <input type="date" name="age" value={age} onChange={handleAge} />
+
+        <div className="Sexbox"> <label>Sex</label>
+          <label>Male</label>
+          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+
+          <label>Female</label>
+          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+
+          <label>Not to define</label>
+          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+        </div>  
 
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
