@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ProjectCard from "./../components/ProjectCard";
+import AddEvent from "../components/AddEvent";
 
 
 
@@ -16,7 +17,7 @@ function HomePage() {
 
     // Send the token through the request "Authorization" Headers
     axios.get(`${API_URL}/api/projects`, { headers: { Authorization: `Bearer ${storedToken}` } })
-    .then((response) => setProjects(response.data))
+    .then((response) => {console.log(response.data ); setProjects(response.data)})
     .catch((error) => console.log(error));
   };
 
@@ -28,8 +29,11 @@ function HomePage() {
 
     return (
       <div>
-        <h1>Home</h1>
-        { projects.map((project) => <ProjectCard key={project._id} {...project} />  )} 
+        <div className="HomeAddEvent">
+          <AddEvent />
+        </div>
+      
+      { projects.map((project) => <ProjectCard key={project._id} {...project} />  )} 
       </div>
     );
   }

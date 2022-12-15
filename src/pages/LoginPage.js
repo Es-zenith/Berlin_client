@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./../context/auth.context";
 
+
 const API_URL = "http://localhost:5005";
 
 
@@ -39,23 +40,30 @@ function LoginPage(props) {
   
   return (
     <div className="LoginPage">
-      <h1>Login</h1>
+      <form  class="signup" onSubmit={handleLoginSubmit}>
+      <h1>Create account</h1>
+      <h2>Already have an account? <span><Link class="link" to={"/signup"}>Sign Up</Link></span></h2>
+      
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+      
+      <div class="signup__field">
+        <input class="signup__input" type="text" name="email" id="email" value={email} onChange={handleEmail}  />
+        <label class="signup__label" for="email">Email</label>
+      </div>
+        
 
-        <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
-
+      <div class="signup__field">
+        <input class="signup__input" type="password" name="password" value={password} onChange={handlePassword} />
+        <label class="signup__label" for="password">Password</label>
+      </div>
+      { errorMessage && <p className="error-message">{errorMessage}</p> }
         <button type="submit">Login</button>
       </form>
-      { errorMessage && <p className="error-message">{errorMessage}</p> }
+     
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
     </div>
   )
 }
 
 export default LoginPage;
+

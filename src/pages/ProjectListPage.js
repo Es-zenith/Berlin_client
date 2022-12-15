@@ -13,7 +13,7 @@ const API_URL = "http://localhost:5005";
 function ProjectListPage() {
   const [projects, setProjects] = useState([]);
   const { user } = useContext(AuthContext);
-
+console.log(projects)
   const getAllProjects = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -36,8 +36,11 @@ function ProjectListPage() {
       
       <AddEvent refreshProjects={getAllProjects} />
       
-      { projects
-      .filter((project)=> {return project.owner == user._id})
+      {projects
+      .filter((project)=> {
+        if (project.owner == null ) return false
+        else {return project.owner._id == user._id}})
+        
       .map((project) => <ProjectCard key={project._id} {...project} />  )} 
       
     </div>

@@ -10,7 +10,6 @@ function SignupPage(props) {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
@@ -36,46 +35,57 @@ function SignupPage(props) {
       navigate("/login");
     })
     .catch((error) => {
-      const errorDescription = error.response.data.message;
-      setErrorMessage(errorDescription);
+      // const errorDescription = error.response.data.message;
+      // setErrorMessage(errorDescription);
     })
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <div className="LoginPage">
+      
+        <form  class="signup" onSubmit={handleSignupSubmit}>
+          <h1>Have Account ?</h1>
+          <h2>Already have an account? <span><Link class="link" to={"/login"}>Sign In</Link></span></h2>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+          <div class="signup__field">
+            <input class="signup__input" type="text" name="name" id="email" value={name} onChange={handleName}  />
+            <label class="signup__label" for="email">Username</label>
+          </div>
 
-        <label>Birthdate</label>
-        <input type="date" name="age" value={age} onChange={handleAge} />
+          <div class="signup__field">
+            <input class="signup__input" type="text" name="email" id="email" value={email} onChange={handleEmail}  />
+            <label class="signup__label" for="email">Email</label>
+          </div>
 
-        <div className="Sexbox"> <label>Sex</label>
-          <label>Male</label>
-          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+          <div class="signup__field">
+            <input class="signup__input" type="number" min="18" name="age" value={age} onChange={handleAge} />
+            <label class="signup__label" for="age">Age</label>
+          </div>
 
-          <label>Female</label>
-          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+          {/* <div > 
+            <label class="signup__input" className="SexBox" >Sex</label>
+            
+            <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+            <label class="signup__input" >Male</label>
 
-          <label>Not to define</label>
-          <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
-        </div>  
+            
+            <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+            <label class="signup__input" >Female</label>
 
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+           
+            <input type="checkbox" name="sex" value={sex} onChange={handleSex} />
+            <label class="signup__input">Not to define</label>
+          </div>   */}
 
-        <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
+          <div class="signup__field">
+            <input class="signup__input" type="password" name="password" value={password} onChange={handlePassword} />
+            <label class="signup__label" for="password">Password</label>
+          </div>
 
-        <button type="submit">Sign Up</button>
-      </form>
+          <button type="submit">Sign Up</button>
 
-      { errorMessage && <p className="error-message">{errorMessage}</p> }
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+        </form>
+      
     </div>
   )
 }

@@ -32,24 +32,7 @@ function ProjectDetailsPage (props) {
     getProject();
   }, [] );
 
-  const getTask = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
-
-    // Send the token through the request "Authorization" Headers
-    axios.get(`${API_URL}/api/tasks/${taskId}`, { headers: { Authorization: `Bearer ${storedToken}` } })
-    .then((response) => {
-      const oneTask = response.data;
-      setTask(oneTask);
-    })
-    .catch((error) => console.log(error));
-  };
-  
-  
-  useEffect(()=> {
-    getTask();
-  }, [] );
-  
+ 
   return (
     <div className="ProjectDetails">
       {project && (
@@ -67,7 +50,7 @@ function ProjectDetailsPage (props) {
       <h4>Comments</h4>
 
       { project && project.tasks.map((task) => <CommentCard key={task._id} {...task} /> )} 
-      <AddComment refreshProject={getTask} projectId={projectId} />           
+      <AddComment refreshProject={getProject} projectId={projectId} />           
 
       
 

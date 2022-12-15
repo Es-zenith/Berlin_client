@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
-import logo from "../berlin.png"
-import logoNew from "../berlin-social.jpg"
+import logo from "../berlin-logo.png"
+import logoNew from "../berlin.png"
 
 
 function Navbar() {
@@ -11,8 +11,11 @@ function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   return (
+    <div>
+    
     <div className="container">
-    <img src={logo} alt="logo" height="100px" />
+    <img className="logo-img" src={logo} alt="logo"/>
+    
     <nav className="nav">
       
       {isLoggedIn && (
@@ -27,12 +30,15 @@ function Navbar() {
       )}
       {!isLoggedIn && (
         <>
-          <Link to="/signup">Sign Up </Link>
-          <Link to="/login"> Login </Link>
+          {/* <Link to="/signup">Sign Up </Link>
+          <Link to="/login"> Login </Link> */}
         </>
       )}  
       </nav>    
     </div>
+
+    </div>
+    
     
     
   );
