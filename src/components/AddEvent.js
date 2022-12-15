@@ -5,6 +5,7 @@ import { AuthContext } from "./../context/auth.context";
 import service from "../services/service";
 
 
+
 const API_URL = "http://localhost:5005";
 
 function AddEvent(props) {
@@ -65,7 +66,7 @@ function AddEvent(props) {
   };
 
   return (
-    <div className="AddProject">
+    <div className="event-container">
       <h3>Add New Event</h3>
 
       <form onSubmit={handleSubmit}>
@@ -74,7 +75,7 @@ function AddEvent(props) {
 
         <label>Description:</label>
         <textarea type="text" name="description"  value={description} onChange={(e) => setDescription(e.target.value)}/>
-
+        
         <span>
         <label>When:</label>
         <input type="date" name="date" value={date} onChange={(e) => setDate(e.target.value)}/>

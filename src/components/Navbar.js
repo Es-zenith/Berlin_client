@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./../context/auth.context";
+import logo from "../berlin.png"
+import logoNew from "../berlin-social.jpg"
+
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -9,13 +12,12 @@ function Navbar() {
 
   return (
     <div className="container">
-    <h2>Berlin Social </h2>
+    <img src={logo} alt="logo" height="100px" />
     <nav className="nav">
       
-      <Link to="/homePage">Home</Link>
-
       {isLoggedIn && (
         <>
+          <Link to="/homePage">Home</Link>
           <Link to="/projects">My Events</Link>
           <Link to= "/profile">Me</Link>
           {/* <button>{user && user.name}</button> */}

@@ -10,19 +10,18 @@ function ProfilePage() {
       <div class="wrapper">
         <div class="img-area">
           <div class="inner-area">
-            <img src="https://www.seekpng.com/png/detail/256-2564130_young-business-woman-png.png" alt="twitter"/>
+            <img src="https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Marker_red-512.png" alt="profile"/>
           </div>
         </div>
         <div class="name">{user && user.name} </div>
         {/* <div class="career">Student</div> */}
         <hr class="horizon" />
         <div class="info">
-          <p>Name: {user.name}</p>
-          <p>Age: {user.age} </p>
-          <p>Sex: {user.sex}</p>
-          <p>Location: {user.location}</p>
-          <p>Interests: {user.interests}</p>
-          <p>Email: {user.email}</p>
+          <p>{user.name}</p>
+          <p>{user.age} </p>
+          <p>{user.sex}</p>
+          <p>{user.location}</p>
+          <p>{user.interests}</p>
           <p></p>
         </div>
         <button>Edit Profile</button> 
