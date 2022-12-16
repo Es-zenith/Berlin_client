@@ -1,7 +1,10 @@
+import homepage from "../homepage.jpg"
+
 function LandingPage() {
   return (
-    <div>
-      <h1>Landing info</h1>
+    <div className= "landingPage">
+     
+      <img src={homepage} alt="event_picture" />
     </div>
   );
 }

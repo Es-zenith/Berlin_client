@@ -14,7 +14,7 @@ function Navbar() {
     <div>
     
     <div className="container">
-    <img className="logo-img" src={logo} alt="logo"/>
+    <Link to="/login"><img className="logo-img" src={logo} alt="logo"/></Link>
     
     <nav className="nav">
       
@@ -25,6 +25,7 @@ function Navbar() {
           <Link to= "/profile">Me</Link>
           {/* <button>{user && user.name}</button> */}
           <button onClick={logOutUser}>Logout</button>
+          
        
         </>
       )}

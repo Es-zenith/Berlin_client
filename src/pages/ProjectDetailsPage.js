@@ -34,29 +34,47 @@ function ProjectDetailsPage (props) {
 
  
   return (
-    <div className="ProjectDetails">
+    <div className="edit-container">
+
       {project && (
-        <>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-          <p>{project.date}</p>
-          <p>{project.time}</p>
-          <p>{project.place}</p>
-          <p>{project.peopleLimit}</p>
-          <img src={project.imageUrl} alt="event_picture" width="350"/>
-        </>
+        <div>
+        
+
+        <div className="edit-container-text">
+          <p>@{project.ownerName} : </p>
+          <h1>{project.title}</h1>
+        </div>
+
+        <div className="edit-container-text">
+          <p>{project.description}</p> 
+        </div>
+
+        <div>
+        <img src={project.imageUrl} alt="event_picture"/>
+        </div>
+
+        <div className="edit-container-text">
+          <p style={{padding: "10px"}}>👬 {project.peopleLimit}</p>
+          <p style={{padding: "10px"}}>📅 {project.date}</p>
+          <p style={{padding: "10px"}}>⏱️ {project.time}</p>
+          <p style={{padding: "10px"}}>📍 {project.place}</p>
+        </div>
+
+         
+         
+        </div>
       )}
 
-      <h4>Comments</h4>
+      <h2>Comments</h2>
 
       { project && project.tasks.map((task) => <CommentCard key={task._id} {...task} /> )} 
       <AddComment refreshProject={getProject} projectId={projectId} />           
 
-      
-
+      <div class= "event-lower">
       <Link to="/projects"><button>Back to Event</button></Link>
 
       <Link to={`/projects/edit/${projectId}`}><button>Edit Event</button></Link>
+      </div>
       
     </div>
   );

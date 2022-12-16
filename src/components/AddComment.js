@@ -31,17 +31,19 @@ function AddComment(props) {
   };
 
   return (
-    <div className="AddComment">
-      <h3>Comment</h3>
-      
+    <div className="AddComment" >
       <form onSubmit={(e) => handleSubmit(e, props.projectId)}>
-        {/* <label>Title:</label>
-        <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/> */}
 
-        <textarea type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+      <div>
+        <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)}/>
+      </div>
 
-        <button type="submit">Send</button>
+      <div>
+      <button type="submit">Send</button>
+      </div>
+     
       </form>
+      
     </div>
   );
 }

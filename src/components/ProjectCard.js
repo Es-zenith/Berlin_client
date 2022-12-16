@@ -10,17 +10,18 @@ function ProjectCard ( { title, description, peopleLimit, _id, owner, imageUrl,t
   console.log(owner)
   return (
       <div class="event-container">
+        <p>@{ownerName}</p>
         <div class="event-upper">
           <img src={imageUrl} alt="event_picture"/>
         </div>
         <div>
-          <p>@{ownerName}</p>
+          
           <h3>{title}</h3>
           <div class="event-time">
             <img src= "https://cdn4.iconfinder.com/data/icons/web-ui-color/128/Marker_red-512.png" alt="event_picture" width="20px" />
-            <p>{place}</p>
+            <p>{place} </p>
             <img src= "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-calendar-outline-512.png" alt="event_picture" width="20px" />
-            <p>{date}</p>
+            <p>{date} </p>
           </div>
 
           <div>

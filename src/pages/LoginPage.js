@@ -41,8 +41,8 @@ function LoginPage(props) {
   return (
     <div className="LoginPage">
       <form  class="signup" onSubmit={handleLoginSubmit}>
-      <h1>Create account</h1>
-      <h2>Already have an account? <span><Link class="link" to={"/signup"}>Sign Up</Link></span></h2>
+      <h1>Welcome Back</h1>
+      <h2>Don't have an account? <span><Link class="link" to={"/signup"}>Sign Up</Link></span></h2>
       
 
       

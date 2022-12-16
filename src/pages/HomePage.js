@@ -29,9 +29,9 @@ function HomePage() {
 
     return (
       <div>
-        <div className="HomeAddEvent">
+        {/* <div className="HomeAddEvent">
           <AddEvent />
-        </div>
+        </div> */}
       
       { projects.map((project) => <ProjectCard key={project._id} {...project} />  )} 
       </div>

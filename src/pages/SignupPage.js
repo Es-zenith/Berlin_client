@@ -12,6 +12,8 @@ function SignupPage(props) {
   const [sex, setSex] = useState("");
 
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(undefined);
+
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -35,8 +37,8 @@ function SignupPage(props) {
       navigate("/login");
     })
     .catch((error) => {
-      // const errorDescription = error.response.data.message;
-      // setErrorMessage(errorDescription);
+      const errorDescription = error.response.data.message;
+      setErrorMessage(errorDescription);
     })
   };
 
@@ -44,7 +46,7 @@ function SignupPage(props) {
     <div className="LoginPage">
       
         <form  class="signup" onSubmit={handleSignupSubmit}>
-          <h1>Have Account ?</h1>
+          <h1>Hello Again!</h1>
           <h2>Already have an account? <span><Link class="link" to={"/login"}>Sign In</Link></span></h2>
 
           <div class="signup__field">

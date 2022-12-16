@@ -95,8 +95,8 @@ function EditProjectPage(props) {
 
   
   return (
-    <div className="EditProjectPage">
-      <h3>Edit the Event</h3>
+    <div className="signup">
+      <h1 className="signup">Edit the Event</h1>
 
       <form onSubmit={handleFormSubmit}>
         <label>Title:</label>

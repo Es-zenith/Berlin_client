@@ -67,15 +67,16 @@ function AddEvent(props) {
   };
 
   return (
-    <div className="event-container">
-      <h3>Add New Event</h3>
+    <div >
+      <h1 className="signup">Add New Event</h1>
 
+      <div className="signup">
       <form onSubmit={handleSubmit}>
-        <label>Title:</label>
+        <label >Title:</label>
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
 
         <label>Description:</label>
-        <textarea type="text" name="description"  value={description} onChange={(e) => setDescription(e.target.value)}/>
+        <input type="text" name="description"  value={description} onChange={(e) => setDescription(e.target.value)}/>
         
         <span>
         <label>When:</label>
@@ -87,12 +88,16 @@ function AddEvent(props) {
         <label>Event Limited to:</label>
         <input type="number" name="eventLimitation" min="1" value={peopleLimit} onChange={(e) => setPeopleLimit(e.target.value)}/>
         <label>Location:</label>
-        <textarea type="text" name="location" value={place} onChange={(e) => setPlace(e.target.value)}/>
+        <input type="text" name="location" value={place} onChange={(e) => setPlace(e.target.value)}/>
 
         <label>Image:</label>
         <input type="file" onChange={(e) => handleFileUpload(e)} />
         <button type="submit">Submit</button>
       </form>
+
+      </div>
+
+      
     </div>
   );
 }
