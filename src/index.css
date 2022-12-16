@@ -105,7 +105,7 @@ a:visited {
   text-decoration: none;
 }
 a:hover, a:active { 
-  color: rgb(49, 50, 56);
+  color: #a4243b;
 }
 
 .event-container {
@@ -193,7 +193,7 @@ a:hover, a:active {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
     position:sticky;
-    left: 20%;
+    margin-left: 20%;
 }
 
 .link {
@@ -289,7 +289,7 @@ a:hover, a:active {
 }
 
 .edit-container {
-  width: 60%;
+  width: 50%;
   height: auto;
   border-radius: 20px;
   border-style:groove;
@@ -317,6 +317,7 @@ a:hover, a:active {
   align-self: center;
   margin-top: 20px;
   padding: 10px;
+ 
 }
 
 .edit-container-text p{
@@ -356,5 +357,4 @@ color: #484646;
 
  .landingPage{
   background-size: cover;
-  position: fixed;
  }

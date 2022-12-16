@@ -21,7 +21,7 @@ function App() {
 
       <Routes>      
         <Route path="/" element={<LandingPage />} />
-        <Route path="/homePage" element={<HomePage />} />
+        <Route path="/homePage" element={<HomePage/>} />
 
         <Route
           path="/profile"

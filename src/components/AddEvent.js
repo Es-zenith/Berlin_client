@@ -68,7 +68,7 @@ function AddEvent(props) {
 
   return (
     <div >
-      <h1 className="signup">Add New Event</h1>
+      <h1 className="signup">Add a new Social Event</h1>
 
       <div className="signup">
       <form onSubmit={handleSubmit}>
